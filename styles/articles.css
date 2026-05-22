@@ -1,0 +1,246 @@
+.article-overlay {
+    position: absolute;
+    inset: 0;
+    
+    background-color: var(--color-overlay);
+}
+
+.article-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    background-image: url("/assets/images/casa\ -2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.article-popup {
+  border: 2px solid white;
+  backdrop-filter: blur(4px);
+  display: flex;
+  transition: all ease-in-out .4s;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.article-popup:hover {
+    background-color: black;
+    box-shadow: 0px 0px 30px black;
+}
+
+.article-popup a {
+  margin: 0;
+  padding: 0;
+
+}
+
+.article {
+  margin-top: 1rem;
+}
+
+.article-content h3 {
+  font-size: 1.6rem;
+  font-weight: 100;
+  color: white;
+  
+}  
+
+.article-popup h3 {
+  font-size: 2rem;
+}
+
+
+@media screen and (min-width: 800px) {
+
+  .article-content h3{
+    font-size: 3.3rem;
+  }
+
+}
+@media screen and (min-width: 1200px) {
+
+  .article-content {
+    flex-direction: row-reverse;
+  }
+
+  .article-content h3{
+    font-size: 3.5rem;
+  }
+
+}
+
+/* =========================================================
+   Article Title Animation
+========================================================= */
+
+.article h3 {
+    overflow: hidden;
+}
+
+.article b {
+    text-shadow: 4px 4px 4px black;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.article h3:not(b) {
+    display: inline-block;
+}
+
+
+/* Non-bold text animation */
+
+.article h3 {
+    animation:
+        articleSlideIn 1s ease forwards;
+    text-shadow: 4px 4px 4px black;
+    transition: all 0.3s ease-in-out;
+    padding-left: 10px;
+    animation-timeline: view();
+    position: rel;
+    animation-range: entry 10% cover 35%;
+}
+
+.article h3:hover  {
+    text-shadow: 8px 8epx 10px black;
+    
+}
+
+.article h3:hover b {
+    text-shadow: 8px 8px 10px black;
+}
+
+/* =========================================================
+   Popup Animation
+========================================================= */
+
+.article-popup {
+    transform: scale(2);
+    opacity: 0;
+
+    animation:
+        popupScaleIn 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+
+    animation-timeline: view();
+    animation-range: entry 15% cover 40%;
+}
+
+
+/* =========================================================
+   Popup Text Fade
+========================================================= */
+
+.article-popup a,
+.article-popup h3 {
+    opacity: 0;
+
+    animation:
+        popupTextFade 0.8s ease forwards;
+
+    animation-delay: 0.8s;
+
+    animation-timeline: view();
+    animation-range: entry 20% cover 45%;
+}
+
+
+/* =========================================================
+   Article Sliding
+========================================================= */
+
+@keyframes articleSlideIn {
+
+    0% {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
+
+/* =========================================================
+   Popup Scale Animation
+========================================================= */
+
+@keyframes popupScaleIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   Popup Text Fade Animation
+========================================================= */
+
+@keyframes popupTextFade {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
+
+/* =========================================================
+   Animate Only Non-Bold Part
+========================================================= */
+
+.article h3 span {
+    display: inline-block;
+
+    opacity: 0;
+    transform: translateX(120px);
+
+    animation:
+        articleSpanSlide 1s ease forwards;
+
+    animation-timeline: view();
+    animation-range: entry 10% cover 35%;
+}
+
+@keyframes articleSpanSlide {
+
+    0% {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}

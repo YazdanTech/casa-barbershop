@@ -1,0 +1,432 @@
+/* =========================================================
+   Services Section
+========================================================= */
+
+.services-section {
+    color: var(--color-white);
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+    overflow: visible;
+
+
+        position: relative;
+
+    min-height: 100vh;
+
+
+    padding: 7rem 1.5rem 4rem;
+
+
+}
+
+
+
+/* =========================================================
+   Hero Overlay
+========================================================= */
+
+.services-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--color-overlay);
+}
+
+
+/* =========================================================
+   Services Section
+========================================================= */
+
+.services-section {
+    position: relative;
+    overflow: hidden;
+    background-color: black                                                              ;
+}
+
+
+/* =========================================================
+   Background Video
+========================================================= */
+
+.services-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit:contain;
+
+    z-index: 0;
+
+    /* filter:
+        grayscale(100%)
+        contrast(1.05)
+        brightness(0.45); */
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   Overlay
+========================================================= */
+
+.services-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.82)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   Content Above Video
+========================================================= */
+
+.section-heading,
+.services-grid-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   Section Heading
+========================================================= */
+
+.section-heading {
+    width: 100%;
+
+    display: flex;
+    justify-content: left;
+
+    margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   Section Title
+========================================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 10;
+    padding-left: 1rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.light-text {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.bold-text {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Services Grid
+========================================================= */
+
+.services-section {
+    overflow: hidden;
+}
+
+.services-grid-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE & Edge */
+}
+
+.services-grid-container::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+}
+
+.services-grid {
+    position: relative;
+
+    width: min-content;
+    height: 200px;
+    display: flex;
+    gap: 0;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    padding: 0.5rem;
+    flex-wrap: nowrap;
+
+    overflow: visible;
+    animation: servicesScroll alternate-reverse 3s infinite;
+}
+
+/* =========================================================
+   Service Card
+========================================================= */
+
+.service-card {
+    position: relative;
+    border: 1px solid var(--color-white);
+    margin: 0 0.5rem ;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    
+    background-color: #111111;
+    border: 1px solid var(--color-white);
+
+
+    transform: scale(1);
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+
+    z-index: 1;
+}
+
+
+@keyframes servicesScroll {
+
+    0% {
+        transform: translateX(3%);
+    }
+
+    100% {
+        transform: translateX(-3%);
+    }
+
+}
+
+/* =========================================================
+   Hover State
+========================================================= */
+
+.service-card:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+    border:1px solid  black;
+
+    z-index: 20;
+}
+
+.service-card:hover .service-image {
+    opacity: 90%;
+}
+
+
+/* =========================================================
+   Service Image
+========================================================= */
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.12);
+    object-fit: cover;
+    opacity: 70%;
+
+    transition: all 0.6s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.0);
+}
+
+
+/* =========================================================
+   Service Overlay
+========================================================= */
+
+.service-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.82),
+        rgba(0, 0, 0, 0.2)
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   Service Name
+========================================================= */
+
+.service-name {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    transition: ease 0.6s all;
+    backdrop-filter: blur(4px);
+    padding: 16px;
+
+
+    /* animation: floatingText 4s ease-in-out infinite; */
+}
+
+.service-card:hover .service-name {
+    box-shadow: 0px 5px 20px black;
+    background-color: black;
+    transform: scale(0.9) translate(0px, -3px);
+}
+
+.service-name h3 {
+    transition: ease 1s all;
+    z-index: 10;
+    font-size: 1.2rem;
+    letter-spacing: 0px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.service-card:hover h3 {
+    transform: scale(1);
+    transition: ease 0.6s all;
+  }
+
+
+/* =========================================================
+   Animations
+========================================================= */
+
+@keyframes floatingText {
+
+    0% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    100% {
+        transform: translateX(-6px);
+    }
+
+}
+
+@keyframes flashingHint {
+
+    0% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    .services-section {
+        padding: 7rem 2rem;
+    }
+
+    .light-text,
+    .bold-text {
+        font-size: 3rem;
+    }
+
+    .services-grid {
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        width: calc(50% - 0.75rem);
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+/* =========================================================
+   Desktop
+========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .services-grid {
+        gap: 1rem;
+        
+        margin: 0 auto;
+        margin-bottom: 20px;
+    animation: servicesScroll linear 20s infinite;
+
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+
+    }
+
+/* =========================================================
+   Infinite Horizontal Scroll
+========================================================= */
+
+@keyframes servicesScroll {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+    .light-text,
+    .bold-text {
+        font-size: 4rem;
+    }
+
+    .service-name {
+        font-size: 1.3rem;
+    }
+
+    .service-hint {
+        font-size: 0.7rem;
+    }
+
+}

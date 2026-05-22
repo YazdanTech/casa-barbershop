@@ -1,0 +1,394 @@
+/* =========================================================
+   Base Reset
+========================================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   Root Variables
+========================================================= */
+
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-overlay: rgba(0, 0, 0, 0.685);
+
+    --font-primary: Arial, Helvetica, sans-serif;
+
+    --container-width: 1400px;
+
+    --transition-default: 0.3s ease;
+}
+
+
+/* =========================================================
+   Global Styles
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    font-weight: 100;
+    font-family: "League Spartan", sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+b {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   Header
+========================================================= */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+/* =========================================================
+   Navigation
+========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+    padding: 0rem 1.5rem;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   Brand Logo
+========================================================= */
+
+.brand-logo {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    border-radius: 25px;
+    transform: translate(-20px);
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   Navigation Links
+========================================================= */
+
+.nav-links {
+    display: none;
+    list-style: none;
+    border-radius: 2rem;
+    background-color: transparent;
+    height: 4rem;
+    padding: 0px 2rem;
+    backdrop-filter: blur(5px);
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition: var(--transition-default);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 1px;
+
+    background-color: var(--color-white);
+
+    transition: var(--transition-default);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Hamburger Menu
+========================================================= */
+
+.menu-toggle {
+    width: 30px;
+    height: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-white);
+}
+
+
+/* =========================================================
+   Hero Section
+========================================================= */
+
+.hero-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7rem 1.5rem 4rem;
+
+    background-image: url("/assets/images/Untitled-5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   Hero Overlay
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--color-overlay);
+}
+
+
+/* =========================================================
+   Hero Content
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 750px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+/* =========================================================
+   Hero Logo
+========================================================= */
+
+.hero-logo {
+    width: 100% ;
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   Hero Heading
+========================================================= */
+
+.hero-content h1 {
+    font-size: 2.3rem;
+    font-weight: 300;
+    letter-spacing: 0rem;
+    transform: translate(-3.3rem, 0.3rem);
+    text-transform: capitalize;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.1;
+
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   Hero Button
+========================================================= */
+
+.hero-button {
+    border: 1px solid var(--color-white);
+
+    padding: 0.9rem 2.2rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    transition: var(--transition-default);
+    backdrop-filter: blur(5px);
+    animation: bookNow 2.5s alternate-reverse infinite;
+}
+
+.hero-button:hover {
+    background-color: rgba(255, 255, 255, 0.521);
+    color: var(--color-black);
+}
+
+    @keyframes bookNow {
+        0%{
+            box-shadow: 0px 0px 20px var(--color-black);
+            border-color: var(--color-black);
+        }
+        100%{
+            box-shadow: 0px 0px 20px var(--color-black);
+            border-color: var(--color-white);
+        }
+    }
+
+/* =========================================================
+   Hero Divider
+========================================================= */
+
+.hero-divider {
+    width: 120px;
+    height: 1px;
+
+    margin: 2rem 0;
+
+    background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%)
+}
+
+
+/* =========================================================
+   Hero Description
+========================================================= */
+
+.hero-description {
+    max-width: 620px;
+
+    font-size: 0.85rem;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    .navbar {
+        padding: 2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.247);
+        border: 1px solid black;
+        align-items: center;
+    }
+
+    .hero-logo {
+        transform: translate(4rem);
+    }
+
+    .hero-content h1 {
+        font-size: 4.6rem;
+        width: 60%;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+/* =========================================================
+   Desktop
+========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .hero-content h1 {
+        font-size: 4.8rem;
+    }
+
+    .header-logo {
+        transform: translate(-3rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+}

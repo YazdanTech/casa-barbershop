@@ -1,0 +1,189 @@
+/* =========================================================
+   Testaments Section
+========================================================= */
+
+.testaments-section {
+    position: relative;
+
+    padding: 6rem 1.5rem;
+
+    background-image: url("/assets/images/casa\ -7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   Background Overlay
+========================================================= */
+
+.testaments-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.72);
+}
+
+
+/* =========================================================
+   Content Container
+========================================================= */
+
+.testaments-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   Header
+========================================================= */
+
+.testaments-header {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 4rem;
+}
+
+
+/* =========================================================
+   Reviews Grid
+========================================================= */
+
+.reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* =========================================================
+   Review Card
+========================================================= */
+
+.review-card {
+    position: relative;
+
+    padding: 2rem;
+
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 0;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0px 10px 30px rgba(0, 0, 0, 0.479);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* =========================================================
+   Hover Effect
+========================================================= */
+
+.review-card:hover {
+    transform:
+        translateY(-10px)
+        translateX(4px);
+
+    box-shadow:
+        0px 18px 45px rgba(0, 0, 0, 0.685);
+}
+
+
+/* =========================================================
+   Stars
+========================================================= */
+
+.review-stars {
+    margin-bottom: 1.5rem;
+
+    color: gold;
+
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   Review Description
+========================================================= */
+
+.review-description {
+    color: var(--color-white);
+
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+    font-weight: 100;
+
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   User Name
+========================================================= */
+
+.review-user {
+    color: var(--color-white);
+
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    .reviews-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .review-card {
+        width: calc(50% - 0.75rem);
+    }
+
+}
+
+
+/* =========================================================
+   Desktop
+========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .testaments-section {
+        padding: 8rem 2rem;
+    }
+
+    .review-card {
+        width: calc(33.333% - 1rem);
+        padding: 2.5rem;
+    }
+
+    .review-description {
+        font-size: 1rem;
+    }
+
+}
