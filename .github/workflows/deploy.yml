@@ -18,12 +18,17 @@ jobs:
         run: sudo apt-get install -y lftp
 
       - name: Deploy to IONOS /dubai via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.FTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -e "
             set sftp:auto-confirm yes;
             set net:timeout 15;
             set net:max-retries 3;
-            open sftp://${{ secrets.SFTP_USERNAME }}:${{ secrets.SFTP_PASSWORD }}@${{ secrets.SFTP_HOST }}:22;
+            open sftp://$SFTP_USERNAME:$SFTP_PASSWORD@$SFTP_HOST:22;
+            mkdir -p /dubai;
             mirror --reverse --delete --only-newer \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
