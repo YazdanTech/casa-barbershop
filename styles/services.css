@@ -32,6 +32,18 @@
     background-color: var(--color-overlay);
 }
 
+@keyframes servicesScroll {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
 
 /* =========================================================
    Services Section
@@ -40,31 +52,14 @@
 .services-section {
     position: relative;
     overflow: hidden;
-    background-color: black                                                              ;
-}
+    background-color: black;                   
+    
+    min-height: 100vh;
 
-
-/* =========================================================
-   Background Video
-========================================================= */
-
-.services-video {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit:contain;
-
-    z-index: 0;
-
-    /* filter:
-        grayscale(100%)
-        contrast(1.05)
-        brightness(0.45); */
-
-    transform: scale(1.05);
+    background-image: url("/assets/images/2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;
 }
 
 
@@ -76,12 +71,7 @@
     position: absolute;
     inset: 0;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.82)
-        );
+    background-color: rgba(0, 0, 0, 0.678);
 
     z-index: 1;
 }
@@ -165,13 +155,31 @@
     height: 200px;
     display: flex;
     gap: 0;
+    z-index: 29;
     margin-bottom: 1rem;
     flex-direction: row;
     padding: 0.5rem;
     flex-wrap: nowrap;
 
     overflow: visible;
-    animation: servicesScroll alternate-reverse 3s infinite;
+    animation: servicesPhoneScroll alternate-reverse 4s infinite;
+}
+
+.services-grid-2 {
+    position: relative;
+    z-index: 29;
+    width: min-content;
+    height: 200px;
+    display: flex;
+    gap: 0;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    padding: 0.5rem;
+    flex-wrap: nowrap;
+
+    overflow: visible;
+    animation: servicesPhoneScroll2 alternate-reverse 4s infinite;
+    
 }
 
 /* =========================================================
@@ -200,14 +208,26 @@
 }
 
 
-@keyframes servicesScroll {
+@keyframes servicesPhoneScroll {
 
     0% {
-        transform: translateX(3%);
+        transform: translateX(-50%);
     }
 
     100% {
-        transform: translateX(-3%);
+        transform: translateX(10%);
+    }
+
+}
+
+@keyframes servicesPhoneScroll2 {
+
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(10%);
     }
 
 }
@@ -218,10 +238,7 @@
 
 .service-card:hover {
     transform: scale(1.08);
-
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
-    border:1px solid  black;
-
     z-index: 20;
 }
 
@@ -374,6 +391,18 @@
 
 }
 
+@keyframes servicesDesktopScroll {
+    
+    0% {
+        transform: translateX(-30%);
+    }
+    
+    100% {
+        transform: translateX(10%);
+    }   
+}
+        
+
 
 /* =========================================================
    Desktop
@@ -383,38 +412,32 @@
 
     .services-grid {
         gap: 1rem;
-        
         margin: 0 auto;
         margin-bottom: 20px;
-    animation: servicesScroll linear 20s infinite;
+        animation: servicesDesktopScroll linear 15s infinite;
+    }
+
+    .services-grid-2 {
+        animation: servicesDesktopScroll linear 15s infinite;
 
     }
 
     .service-card {
+        height: auto;
+        width: 500px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
-
+        
     }
-
 /* =========================================================
    Infinite Horizontal Scroll
 ========================================================= */
 
-@keyframes servicesScroll {
 
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-
-}
 
     .light-text,
     .bold-text {

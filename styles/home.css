@@ -85,14 +85,12 @@ b {
 ========================================================= */
 
 .navbar {
-    width: 100%;
-    max-width: var(--container-width);
 
-    margin: 0 auto;
-    padding: 0rem 1.5rem;
     position: fixed;
-    top: 0;
     display: flex;
+    top: 0px;
+    right: 1rem;
+    left: 1rem;
     align-items: center;
     justify-content: space-between;
 
@@ -203,7 +201,7 @@ b {
 
     padding: 7rem 1.5rem 4rem;
 
-    background-image: url("/assets/images/Untitled-5.jpg");
+    background-image: url("/assets/images/1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -346,7 +344,7 @@ b {
 @media screen and (min-width: 768px) {
 
     .navbar {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .nav-links {

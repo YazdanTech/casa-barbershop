@@ -41,7 +41,7 @@
     z-index: 2;
 
     width: 100%;
-    max-width: 1400px;
+    max-width: 1400px; 
 
     backdrop-filter: blur(40px);
     padding: 1rem;

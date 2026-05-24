@@ -69,9 +69,35 @@
 /* =========================================================
    Review Card
 ========================================================= */
+/* =========================================================
+   Reviews Grid
+========================================================= */
+
+.reviews-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+    width: max-content;
+
+    animation: reviewsScroll 10s linear infinite;
+}
+
+.reviews-grid:hover {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   Review Card
+========================================================= */
 
 .review-card {
     position: relative;
+
+    flex: 0 0 auto;
+
+    width: 85vw;
 
     padding: 2rem;
 
@@ -89,6 +115,67 @@
         box-shadow 0.45s ease;
 }
 
+
+/* =========================================================
+   Hover Effect
+========================================================= */
+
+.review-card:hover {
+    transform:
+        translateY(-10px)
+        translateX(4px);
+
+    box-shadow:
+        0px 18px 45px rgba(0, 0, 0, 0.685);
+}
+
+
+/* =========================================================
+   Infinite Horizontal Scroll
+========================================================= */
+
+@keyframes reviewsScroll {
+
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    .review-card {
+        width: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   Desktop
+========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .review-card {
+        width: 480px;
+        padding: 2.5rem;
+    }
+
+}
+
+.testaments-container {
+    overflow: hidden;
+}
 
 /* =========================================================
    Hover Effect
