@@ -80,12 +80,9 @@
 
     width: max-content;
 
-    animation: reviewsScroll 10s linear infinite;
+    animation: reviewsScroll 15s linear infinite;
 }
 
-.reviews-grid:hover {
-    animation-play-state: paused;
-}
 
 
 /* =========================================================
@@ -110,9 +107,7 @@
     box-shadow:
         0px 10px 30px rgba(0, 0, 0, 0.479);
 
-    transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease;
+    transition: all ease .4s;
 }
 
 
@@ -166,15 +161,16 @@
 
 @media screen and (min-width: 1200px) {
 
-    .review-card {
+    .reviews-grid {
         width: 480px;
         padding: 2.5rem;
+        animation: reviewsScroll 25s linear infinite;
     }
 
 }
 
 .testaments-container {
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* =========================================================
@@ -185,6 +181,8 @@
     transform:
         translateY(-10px)
         translateX(4px);
+
+    background-color: rgba(0, 0, 0, 0.548);
 
     box-shadow:
         0px 18px 45px rgba(0, 0, 0, 0.685);

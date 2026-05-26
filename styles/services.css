@@ -162,7 +162,8 @@
     flex-wrap: nowrap;
 
     overflow: visible;
-    animation: servicesPhoneScroll alternate-reverse 4s infinite;
+    animation: servicesDesktopScroll linear 15s infinite;
+
 }
 
 .services-grid-2 {
@@ -178,7 +179,7 @@
     flex-wrap: nowrap;
 
     overflow: visible;
-    animation: servicesPhoneScroll2 alternate-reverse 4s infinite;
+    animation: servicesDesktopScroll linear 15s infinite;
     
 }
 
@@ -280,6 +281,7 @@
         rgba(0, 0, 0, 0.2)
     );
 
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,10 +295,11 @@
 
 .service-name {
     font-size: 1.2rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--color-white);
-    border: 1px solid var(--color-white);
+    border: 1px solid transparent;
     transition: ease 0.6s all;
+    font-weight: bold;
     backdrop-filter: blur(4px);
     padding: 16px;
 
@@ -316,7 +319,7 @@
     font-size: 1.2rem;
     letter-spacing: 0px;
     text-align: center;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .service-card:hover h3 {

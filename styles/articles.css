@@ -53,18 +53,14 @@
 }
 
 .article-content h3 {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 100;
   color: white;
   
 }  
 
-.article-desc {
-    margin-left: 1rem;
-}
-
 .article-popup h3 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 
@@ -96,7 +92,6 @@
 }
 
 .article b {
-    text-shadow: 4px 4px 4px black;
     transition: all 0.3s ease-in-out;
 
 }
@@ -247,4 +242,9 @@
         transform: translateX(0px);
     }
 
+}
+
+.article-desc h3 {
+    margin-left: 1rem;
+    font-size: 1.3rem;
 }

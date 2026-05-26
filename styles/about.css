@@ -5,7 +5,7 @@
 .about-section {
     position: relative;
 
-    padding: 6rem 1.5rem;
+    padding: 6rem .1rem;
 
     background-image: url("/assets/images/casa\ -6.jpg");
     background-size: cover;
@@ -13,7 +13,6 @@
     background-repeat: no-repeat;
 
     display: flex;
-    width: 100%;
     flex-direction: column;
 
     overflow: hidden;
@@ -164,13 +163,12 @@
 ========================================================= */
 
 .about-list span {
-    color: rgba(255, 255, 255, 0.5);
 
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 1px;
 
     text-transform: uppercase;
-    letter-spacing: 0.18em;
 }
 
 
@@ -195,12 +193,16 @@
 ========================================================= */
 
 .about-map {
-    width: 100%;
-    height: auto;
-
+    min-width: 100px;
+    max-width: 400px;
+    min-height: 100px;
+    max-height: 400px;
+    width: 70%;
+    height: 200px;
     overflow: hidden;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(color-white);
+
     margin: 0 auto;
 
     box-shadow:
@@ -215,12 +217,11 @@
 .about-map iframe {
     width: 100%;
 
-    border: 0;
+    border: 1px solid var(--color-white);
 
     filter:
-        grayscale(100%)
-        contrast(1.1)
-        brightness(0.85);
+        contrast(0.9)
+        brightness(0.90);
 }
 
 
@@ -249,12 +250,16 @@
 
     .about-section {
         flex-direction: row;
-        width: 100%;
+        width: 80%;
+        border: 1px solid var(--color-white);
+        margin: 10rem auto;
+        box-shadow: 0px 0px 60px rgba(156, 156, 156, 0.575);
     }
 
     .about-section {
-        padding: 8rem 2rem;
 
+        padding: 4rem 2rem;
+        padding-top: 1rem;
     }
 
     .about-content {
@@ -279,4 +284,9 @@
         min-height: 500px;
     }
 
+}
+
+.map-container {
+    border: 1px solid var(--color-white);
+    height: min-content;
 }
