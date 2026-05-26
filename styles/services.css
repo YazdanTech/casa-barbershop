@@ -12,11 +12,6 @@
         position: relative;
 
     min-height: 100vh;
-
-
-    padding: 7rem 1.5rem 4rem;
-
-
 }
 
 
@@ -85,6 +80,7 @@
 .services-grid-container {
     position: relative;
     z-index: 2;
+    overflow: visible;
 }
 
 
@@ -139,9 +135,8 @@
 .services-grid-container {
     overflow-x: scroll;
     overflow-y: hidden;
-
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE & Edge */
+    scrollbar-width: none;    
+    -ms-overflow-style: none;
 }
 
 .services-grid-container::-webkit-scrollbar {
@@ -179,7 +174,8 @@
     flex-wrap: nowrap;
 
     overflow: visible;
-    animation: servicesDesktopScroll linear 15s infinite;
+    animation-delay: .4s;
+    animation: servicesDesktopScroll linear 12s infinite;
     
 }
 
