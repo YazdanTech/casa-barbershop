@@ -131,7 +131,7 @@ b {
     background-color: transparent;
     height: 4rem;
     padding: 0px 2rem;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(30px);
     gap: 2rem;
 }
 

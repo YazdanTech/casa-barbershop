@@ -162,7 +162,7 @@
 @media screen and (min-width: 1200px) {
 
     .reviews-grid {
-        width: 480px;
+        width: 100%;
         padding: 2.5rem;
         animation: reviewsScroll 25s linear infinite;
     }
