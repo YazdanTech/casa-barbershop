@@ -6,13 +6,13 @@
     position: relative;
 
     padding: 6rem 1.5rem;
+    overflow: hidden;
 
     background-image: url("/assets/images/11.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    overflow: hidden;
 }
 
 
@@ -24,7 +24,7 @@
     position: absolute;
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.72);
+    background: rgba(0, 0, 0, 0.363);
 }
 
 
@@ -61,26 +61,11 @@
 
 .reviews-grid {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-
-/* =========================================================
-   Review Card
-========================================================= */
-/* =========================================================
-   Reviews Grid
-========================================================= */
-
-.reviews-grid {
-    display: flex;
     flex-direction: row;
     gap: 1.5rem;
-
     width: max-content;
-
-    animation: reviewsScroll 15s linear infinite;
+    margin-left: 200px;
+    animation: reviewsScroll 22s linear infinite;
 }
 
 
@@ -98,17 +83,35 @@
 
     padding: 2rem;
 
+
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 0;
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.527);
 
     box-shadow:
-        0px 10px 30px rgba(0, 0, 0, 0.479);
+        0px 10px 20px rgba(0, 0, 0, 0.479);
 
     transition: all ease .4s;
 }
+
+
+.reviews-grid-container {
+    overflow-x: scroll;
+    width: 200%;
+    overflow-y: visible;
+    scrollbar-width: none;
+    margin-left: -100px;    
+    padding: 5rem 0;
+    -ms-overflow-style: none;
+}
+
+.reviews-grid-container::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+}
+
 
 
 /* =========================================================
@@ -271,4 +274,16 @@
         font-size: 1rem;
     }
 
+}
+
+.review-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-button {
+    margin: 0 auto;
+    background-color: black;
 }
