@@ -27,7 +27,6 @@
 }
 
 .article-popup {
-  border: 2px solid white;
   backdrop-filter: blur(4px);
   display: flex;
   transition: all ease-in-out .4s;
@@ -35,11 +34,6 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-}
-
-.article-popup:hover {
-    background-color: black;
-    box-shadow: 0px 0px 30px black;
 }
 
 .article-popup a {
@@ -104,24 +98,15 @@
 /* Non-bold text animation */
 
 .article h3 {
-    animation:
-        articleSlideIn 1s ease forwards;
-    text-shadow: 4px 4px 4px black;
+    animation: articleSlideIn 1s ease forwards;
+    border-left: 2px solid var(--color-white);
     transition: all 0.3s ease-in-out;
-    padding-left: 10px;
+    padding-left: 20px;
     animation-timeline: view();
     position: rel;
     animation-range: entry 10% cover 35%;
 }
 
-.article h3:hover  {
-    text-shadow: 8px 8epx 10px black;
-    
-}
-
-.article h3:hover b {
-    text-shadow: 8px 8px 10px black;
-}
 
 /* =========================================================
    Popup Animation
@@ -246,5 +231,8 @@
 
 .article-desc h3 {
     margin-left: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    border-left: none;
 }
+
+
