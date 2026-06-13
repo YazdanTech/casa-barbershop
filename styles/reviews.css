@@ -135,6 +135,7 @@
     .reviews-grid {
         width: 105vw;
         padding: 2.5rem;
+        margin-left: -1300px;
         animation: reviewsScroll 25s linear infinite;
     }
 

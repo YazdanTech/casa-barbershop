@@ -2,7 +2,7 @@ const reviewSets = [
   [
     {
       stars: "★★★★★",
-      text: "Exceptional attention to detail and one of the most refined barber experiences in Dubai. The atmosphere, precision, and professionalism exceeded expectations completely.",
+      text: "Exceptional attention to detail and one of the most refined barber experiences in Dubai. The atmosphere, precision, and professionalism exceeded expectations completely.<br><br><b>Services:</b> Beard Trim, Hair Cut",
       user: "Michael Reed"
     },
     {

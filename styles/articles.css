@@ -1,153 +1,172 @@
 .article-overlay {
     position: absolute;
     inset: 0;
-    
     background-color: var(--color-overlay);
 }
 
-.article-section {
+.article-content {
     position: relative;
+    z-index: 2;
 
     min-height: 100vh;
+    padding: 3rem 1rem;
+    width: 100%;
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
     background-image: url("/assets/images/10.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.article-content {
-  display: flex;
-  flex-direction: column;
-  z-index: 2;
-  width: 100%;
-  align-items: center;
-  justify-content: space-evenly;
+/* 
+   Layout Blocks
+ */
+
+.article-content .right,
+.article-content .left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .article-popup {
-  backdrop-filter: blur(4px);
-  display: flex;
-  transition: all ease-in-out .4s;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    transition: all ease-in-out .4s;
 }
 
-.article-popup a {
-  margin: 0;
-  padding: 0;
+.article-popup h2 {
+    margin: 0;
+    font-size: 5rem;
+    z-index: 10;
+    font-weight: 100;
+    color: white;
+    line-height: 1.1;
+}
 
+.article-popup b {
+    font-weight: 500;
+}
+
+/* Articles List */
+
+.articles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 900px;
 }
 
 .article {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
-.article-content h3 {
-  font-size: 2.1rem;
-  font-weight: 100;
-  color: white;
-  
-}  
-
-.article-popup h3 {
-    font-size: 2rem;
+.article article {
+    width: 100%;
 }
 
-
-@media screen and (min-width: 800px) {
-
-  .article-content h3{
-    font-size: 3.3rem;
-  }
-
-}
-@media screen and (min-width: 1200px) {
-
-  .article-content {
-    flex-direction: row-reverse;
-  }
-
-  .article-content h3{
-    font-size: 3.5rem;
-  }
-
+.article-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* =========================================================
-   Article Title Animation
-========================================================= */
+/* Main article title */
 
-.article h3 {
+.article-link h3 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--color-white);
+    padding: 1rem;
     overflow: hidden;
-}
-
-.article b {
-    transition: all 0.3s ease-in-out;
-
-}
-
-.article h3:not(b) {
-    display: inline-block;
-}
-
-
-/* Non-bold text animation */
-
-.article h3 {
+    background: linear-gradient(to right,black 1%, transparent 50%, black 100%);
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    transform: translateX(120px);
     animation: articleSlideIn 1s ease forwards;
-    border-left: 2px solid var(--color-white);
-    transition: all 0.3s ease-in-out;
-    padding-left: 20px;
     animation-timeline: view();
-    position: rel;
     animation-range: entry 10% cover 35%;
 }
 
 
-/* =========================================================
-   Popup Animation
-========================================================= */
+.article-link-1 h3{
+    background: linear-gradient(to right,black 1%, transparent 80%);
+}
+.article-link-2 h3{
+    background: linear-gradient(to right,black 1%, transparent 60%);
+}
+.article-link-3 h3{
+    background: linear-gradient(to right,black 1%, transparent 40%);
+}
+.article-link-4 h3{
+    background: linear-gradient(to right,black 1%, transparent 20%);
+}
 
+
+/* Description text */
+.article-link .desc {
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: white;
+    line-height: 1.35;
+
+    opacity: 0;
+    transform: translateX(90px);
+
+    animation: articleDescSlide 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 12% cover 38%;
+}
+
+/* 
+   Hover / Focus
+ */
+
+.article-link h3,
+.article-link .desc,
 .article-popup {
-    transform: scale(2);
-    opacity: 0;
-
-    animation:
-        popupScaleIn 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-
-    animation-timeline: view();
-    animation-range: entry 15% cover 40%;
+    transition: all 0.3s ease-in-out;
 }
 
-
-/* =========================================================
-   Popup Text Fade
-========================================================= */
-
-.article-popup a,
-.article-popup h3 {
-    opacity: 0;
-
-    animation:
-        popupTextFade 0.8s ease forwards;
-
-    animation-delay: 0.8s;
-
-    animation-timeline: view();
-    animation-range: entry 20% cover 45%;
+.article-link:hover h3,
+.article-link:focus-visible h3 {
+    transform: translateX(6px);
 }
 
+.article-link:hover .desc,
+.article-link:focus-visible .desc {
+    transform: translateX(4px);
+}
 
-/* =========================================================
-   Article Sliding
-========================================================= */
+.article-link:focus-visible {
+    outline: none;
+}
+
+.article-link:focus-visible h3 {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+/* 
+   Keyframes
+ */
 
 @keyframes articleSlideIn {
-
     0% {
         opacity: 0;
         transform: translateX(120px);
@@ -155,84 +174,69 @@
 
     100% {
         opacity: 1;
-        transform: translateX(0px);
+        transform: translateX(0);
     }
-
 }
 
-
-/* =========================================================
-   Popup Scale Animation
-========================================================= */
-
-@keyframes popupScaleIn {
-
+@keyframes articleDescSlide {
     0% {
         opacity: 0;
-        transform: scale(2);
+        transform: translateX(90px);
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateX(0);
     }
-
 }
 
+/* 
+   Tablet
+ */
 
-/* =========================================================
-   Popup Text Fade Animation
-========================================================= */
-
-@keyframes popupTextFade {
-
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
+@media screen and (min-width: 800px) {
+    .article-popup h2 {
+        font-size: 3.3rem;
     }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
+    .article-link h3 {
+        font-size: 3.3rem;
     }
 
+    .article-link .desc {
+        font-size: 1.8rem;
+    }
 }
 
-/* =========================================================
-   Animate Only Non-Bold Part
-========================================================= */
+/* 
+   Desktop
+ */
 
-.article h3 span {
-    display: inline-block;
-
-    opacity: 0;
-    transform: translateX(120px);
-
-    animation:
-        articleSpanSlide 1s ease forwards;
-
-    animation-timeline: view();
-    animation-range: entry 10% cover 35%;
-}
-
-@keyframes articleSpanSlide {
-
-    0% {
-        opacity: 0;
-        transform: translateX(120px);
+@media screen and (min-width: 1200px) {
+    .article-content {
+        flex-direction: row-reverse;
     }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
+    .article-content .right,
+    .article-content .left {
+        width: 50%;
     }
 
+    .article-content h2,
+    .article-link h3 {
+        font-size: 2.5rem;
+    }
+
+    .article-link .desc {
+        font-size: 1.6rem;
+    }
+
+    .article-popup h2 {
+        font-size: 4rem;
+    }
+
+    .articles {
+        max-width: 1000px;
+        padding-right: 2rem;
+    }
 }
-
-.article-desc h3 {
-    margin-left: 1rem;
-    font-size: 1.6rem;
-    border-left: none;
-}
-
-
