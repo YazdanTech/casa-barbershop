@@ -66,6 +66,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#reviews">Revieiws</a></li>
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -128,7 +130,7 @@
         <!-- CTA -->
         <div class="side-nav-footer">
 
-            <a href="#booking" class="side-nav-button">
+            <a href="https://www.fresha.com/book-now/casa-barbershop-qumkyw0y/all-offer?share=true&pId=553228" class="side-nav-button">
                 Book Now
             </a>
 
@@ -168,7 +170,7 @@
 
                 </div>
                 <!-- CTA -->
-                <a href="#booking" class="hero-button">
+                <a href="https://www.fresha.com/book-now/casa-barbershop-qumkyw0y/all-offer?share=true&pId=553228" class="hero-button">
                     Book Now
                 </a>
 
@@ -539,9 +541,9 @@
                 </div>
 
                 <div class="review-btn-container">
-                    <a href="#change the link" class="hero-button review-button">
+                    <button type="button" class="hero-button review-button" id="moreReviewsBtn">
                         More Reviews
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -694,43 +696,8 @@
 
     </main>
 
-<script>
-
-    const sideNav = document.getElementById("sideNav");
-
-    const menuToggle = document.querySelector(".menu-toggle");
-
-    const sideNavClose = document.getElementById("sideNavClose");
-
-    const sideNavOverlay = document.getElementById("sideNavOverlay");
-
-
-    // Open Nav
-    menuToggle.addEventListener("click", () => {
-
-        sideNav.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-    });
-
-
-    // Close Nav Function
-    function closeSideNav() {
-
-        sideNav.classList.remove("active");
-
-        document.body.style.overflow = "auto";
-
-    }
-
-
-    // Close Events
-    sideNavClose.addEventListener("click", closeSideNav);
-
-    sideNavOverlay.addEventListener("click", closeSideNav);
-
-</script>
+<script src="./scripts/base.js"></script>
+<script src="./scripts/reviews.js"></script>
 
 </body>
 </html>

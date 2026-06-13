@@ -1,6 +1,4 @@
-/* =========================================================
-   Testaments Section
-========================================================= */
+/* Testaments Section */
 
 .testaments-section {
     position: relative;
@@ -15,10 +13,7 @@
 
 }
 
-
-/* =========================================================
-   Background Overlay
-========================================================= */
+/* Background Overlay */
 
 .testaments-overlay {
     position: absolute;
@@ -27,10 +22,7 @@
     background: rgba(0, 0, 0, 0.363);
 }
 
-
-/* =========================================================
-   Content Container
-========================================================= */
+/* Content Container */
 
 .testaments-container {
     position: relative;
@@ -42,10 +34,7 @@
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   Header
-========================================================= */
+/* Header */
 
 .testaments-header {
     display: flex;
@@ -54,10 +43,7 @@
     margin-bottom: 4rem;
 }
 
-
-/* =========================================================
-   Reviews Grid
-========================================================= */
+/* Reviews Grid */
 
 .reviews-grid {
     display: flex;
@@ -69,32 +55,22 @@
 }
 
 
-
-/* =========================================================
-   Review Card
-========================================================= */
+/* Review Card */
 
 .review-card {
     position: relative;
-
     flex: 0 0 auto;
-
     width: 85vw;
-
     padding: 2rem;
-
-
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 0;
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); */
     background-color: rgba(0, 0, 0, 0.527);
-
     box-shadow:
         0px 10px 20px rgba(0, 0, 0, 0.479);
+    transition: ease 0.9 all;
 
-    transition: all ease .4s;
 }
 
 
@@ -113,24 +89,15 @@
 }
 
 
-
-/* =========================================================
-   Hover Effect
-========================================================= */
+/* Hover Effect */
 
 .review-card:hover {
-    transform:
-        translateY(-10px)
-        translateX(4px);
+    transform:translateY(-10px) translateX(4px);
+    box-shadow:0px 18px 45px rgba(0, 0, 0, 0.685);
+    transition: all ease .9s;
+    }
 
-    box-shadow:
-        0px 18px 45px rgba(0, 0, 0, 0.685);
-}
-
-
-/* =========================================================
-   Infinite Horizontal Scroll
-========================================================= */
+/* Infinite Horizontal Scroll */
 
 @keyframes reviewsScroll {
 
@@ -144,10 +111,7 @@
 
 }
 
-
-/* =========================================================
-   Tablet
-========================================================= */
+/* Tablet */
 
 @media screen and (min-width: 768px) {
 
@@ -157,10 +121,7 @@
 
 }
 
-
-/* =========================================================
-   Desktop
-========================================================= */
+/* Desktop */
 
 @media screen and (min-width: 1200px) {
 
@@ -175,10 +136,7 @@
 .testaments-container {
     overflow: visible;
 }
-
-/* =========================================================
-   Hover Effect
-========================================================= */
+/* Hover Effect */
 
 .review-card:hover {
     transform:
@@ -191,10 +149,7 @@
         0px 18px 45px rgba(0, 0, 0, 0.685);
 }
 
-
-/* =========================================================
-   Stars
-========================================================= */
+/* Stars */
 
 .review-stars {
     margin-bottom: 1.5rem;
@@ -205,10 +160,7 @@
     letter-spacing: 0.2em;
 }
 
-
-/* =========================================================
-   Review Description
-========================================================= */
+/* Review Description */
 
 .review-description {
     color: var(--color-white);
@@ -221,10 +173,7 @@
     margin-bottom: 2rem;
 }
 
-
-/* =========================================================
-   User Name
-========================================================= */
+/* User Name */
 
 .review-user {
     color: var(--color-white);
@@ -236,10 +185,7 @@
     letter-spacing: 0.08em;
 }
 
-
-/* =========================================================
-   Tablet
-========================================================= */
+/* Tablet */
 
 @media screen and (min-width: 768px) {
 
@@ -254,10 +200,7 @@
 
 }
 
-
-/* =========================================================
-   Desktop
-========================================================= */
+/* Desktop */
 
 @media screen and (min-width: 1200px) {
 
@@ -286,4 +229,34 @@
 .review-button {
     margin: 0 auto;
     background-color: black;
+    color: var(--color-white);
+}
+
+.reviews-grid-container {
+    perspective: 1200px;
+}
+
+.reviews-grid {
+    transform-style: preserve-3d;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.9s ease,
+                filter 0.9s ease;
+}
+
+.reviews-grid.is-switching {
+    transform: translateX(-24px) rotateY(-12deg) scale(0.98);
+    opacity: 0.35;
+    filter: blur(6px);
+}
+
+.review-card.entering {
+    opacity: 0;
+    transform: translateX(60px) rotateY(25deg);
+}
+
+.review-card.entered {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.9s ease;
 }
