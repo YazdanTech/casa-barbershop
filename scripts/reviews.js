@@ -54,20 +54,33 @@ function renderReviews(setIndex) {
       setTimeout(() => {
         card.classList.remove("entering");
         card.classList.add("entered");
-      }, i * 400);
+      }, i * 250);
     });
   });
 }
 
 btn.addEventListener("click", () => {
-  grid.classList.add("is-switching");
 
-  setTimeout(() => {
-    currentSetIndex = (currentSetIndex + 1) % reviewSets.length;
-    renderReviews(currentSetIndex);
+    const cards = grid.querySelectorAll(".review-card");
+
+    cards.forEach((card, index) => {
+
+        setTimeout(() => {
+            card.classList.add("leaving");
+        }, index * 250);
+
+    });
+
+    const totalExitTime =
+        (cards.length - 1) * 150 + 2400;
 
     setTimeout(() => {
-      grid.classList.remove("is-switching");
-    }, 350);
-  }, 500);
+
+        currentSetIndex =
+            (currentSetIndex + 1) % reviewSets.length;
+
+        renderReviews(currentSetIndex);
+
+    }, totalExitTime);
+
 });
