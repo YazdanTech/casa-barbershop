@@ -146,6 +146,16 @@
         <!-- Hero Section -->
         <section class="hero-section" id="home">
 
+        <!-- Phone & Tablet Video -->
+        <video class="hero-video mobile-video" autoplay loop muted playsinline>
+            <source src="./assets/videos/website vertical low quality.mp4" type="video/mp4">
+        </video>
+
+        <!-- Laptop/Desktop Video -->
+        <video class="hero-video desktop-video" autoplay loop muted playsinline>
+            <source src="./assets/videos/website low quality.mp4" type="video/mp4">
+        </video>
+
             <!-- Overlay -->
             <div class="hero-overlay"></div>
 
@@ -179,17 +189,15 @@
         </section>
 
         <!-- Services Section -->
-        <section class="services-section" id="services">
-
+        <section class="services-section" id="services" aria-labelledby="services-heading">
 
             <!-- Overlay -->
             <div class="services-overlay"></div>
 
-
             <!-- Section Heading -->
             <header class="section-heading">
 
-                <h2 class="section-title">
+                <h2 class="section-title" id="services-heading">
                     <span class="light-text">Our</span>
                     <span class="bold-text">Services</span>
                 </h2>
@@ -199,173 +207,121 @@
             <div class="services-grid-container">
                 <div class="services-grid">
 
-                    <!-- Service Card -->
                     <article class="service-card">
-
-                        <img src="assets/images/services/hair and beard.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Haircut & Beard</h3>
+                        <a href="/book/braiding" class="service-link" aria-label="Book Braiding Service">
+                            <img
+                                src="/assets/images/services/braiding.jpg"
+                                alt="Braiding service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Braiding</h3>
+                                </div>
                             </div>
-                        </div>
-
+                        </a>
                     </article>
 
-                    <!-- Service Card -->
                     <article class="service-card">
-
-                        <img src="/assets/images/services/hair coloring.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Coloring</h3>
+                        <a href="/book/dreadlocks" class="service-link" aria-label="Book Dreadlocks Service">
+                            <img
+                                src="/assets/images/services/dreadlocks.png"
+                                alt="Dreadlocks service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Dreadlocks</h3>
+                                </div>
                             </div>
-                        </div>
-
+                        </a>
                     </article>
 
-                    <!-- Service Card -->
                     <article class="service-card">
-
-                        <img src="/assets/images/services/braiding.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Braiding</h3>
+                        <a href="/book/hair-coloring" class="service-link" aria-label="Book Hair Coloring Service">
+                            <img
+                                src="/assets/images/services/hair%20coloring.jpg"
+                                alt="Hair coloring service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Hair Coloring</h3>
+                                </div>
                             </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/services/hair and beard.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Haircut & Beard</h3>
-                            </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/services/hair coloring.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Coloring</h3>
-                            </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/services/braiding.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Braiding</h3>
-                            </div>
-                        </div>
-
+                        </a>
                     </article>
 
                 </div>
-
             </div>
 
-            <!-- Services Grid -->
+            
+            <div class="all-services-container">
+
+                <a href="/services" aria-label="View All Barber Services">
+
+                    <div class="box">
+                        <div class="all-services">
+                            <h3>All Services</h3>
+                        </div>
+                    </div>
+
+                </a>
+
+            </div>
 
             <div class="services-grid-container">
                 <div class="services-grid services-grid-2">
 
-                    <!-- Service Card -->
                     <article class="service-card">
-
-                        <img src="/assets/images/services/hair treatment.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Hair Treatment</h3>
+                        <a href="/book/hair-and-beard" class="service-link" aria-label="Book Hair and Beard Service">
+                            <img
+                                src="/assets/images/services/hair%20and%20beard.png"
+                                alt="Hair and beard grooming service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Hair and Beard</h3>
+                                </div>
                             </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/services/dreadlocks.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Dreadlocks</h3>
-                            </div>
-                        </div>
-
+                        </a>
                     </article>
 
                     <article class="service-card">
-
-                        <img src="/assets/images/services/all services.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>All Services</h3>
+                        <a href="/book/hair-treatment" class="service-link" aria-label="Book Hair Treatment Service">
+                            <img
+                                src="/assets/images/services/hair%20treatment.png"
+                                alt="Hair treatment service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Hair Treatment</h3>
+                                </div>
                             </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/5.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Hair Treatment</h3>
-                            </div>
-                        </div>
-
-                    </article>
-
-                    <!-- Service Card -->
-                    <article class="service-card">
-
-                        <img src="/assets/images/services/dreadlocks.png" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>Dreadlocks</h3>
-                            </div>
-                        </div>
-
+                        </a>
                     </article>
 
                     <article class="service-card">
-
-                        <img src="/assets/images/7.jpg" alt="Luxury Haircut Service" class="service-image">
-
-                        <div class="service-overlay">
-                            <div class="service-name">
-                                <h3>All Services</h3>
+                        <a href="/book/haircut" class="service-link" aria-label="Book Haircut Service">
+                            <img
+                                src="/assets/images/services/haircut.png"
+                                alt="Haircut service"
+                                class="service-image"
+                            >
+                            <div class="service-overlay">
+                                <div class="service-name">
+                                    <h3>Haircut</h3>
+                                </div>
                             </div>
-                        </div>
-
+                        </a>
                     </article>
+
                 </div>
             </div>
 
         </section>
-
 
         <section class="article-content" aria-labelledby="articles-heading" id="article">
             <div class="article-overlay"></div>
@@ -659,6 +615,7 @@
 
     <script src="./scripts/base.js"></script>
     <script src="./scripts/reviews.js"></script>
+    <script src="./scripts/articles.js"></script>
 
 </body>
 

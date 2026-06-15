@@ -1,6 +1,6 @@
-/* =========================================================
+/* 
    Services Section
-========================================================= */
+ */
 
 .services-section {
     color: var(--color-white);
@@ -16,13 +16,14 @@
 
 
 
-/* =========================================================
+/* 
    Hero Overlay
-========================================================= */
+ */
 
 .services-overlay {
     position: absolute;
     inset: 0;
+    z-index: 0;
 
     background-color: var(--color-overlay);
 }
@@ -40,53 +41,55 @@
 }
 
 
-/* =========================================================
+/* 
    Services Section
-========================================================= */
+ */
 
 .services-section {
     position: relative;
-    overflow: hidden;
-    background-color: black;                   
+    overflow: visible;
+    background-color: var(--color-black);                   
     
     min-height: 100vh;
 
-    background-image: url("/assets/images/2.jpg");
+    background-image: url("/assets/images/1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;;
 }
 
 
-/* =========================================================
+/* 
    Overlay
-========================================================= */
+ */
 
 .services-overlay {
     position: absolute;
     inset: 0;
 
     background-color: rgba(0, 0, 0, 0.678);
+    backdrop-filter: blur(4px) grayscale(100%);
 
     z-index: 1;
 }
 
 
-/* =========================================================
+/* 
    Content Above Video
-========================================================= */
+ */
 
 .section-heading,
 .services-grid-container {
     position: relative;
-    z-index: 2;
     overflow: visible;
+    z-index: 4;
 }
 
 
-/* =========================================================
+
+/* 
    Section Heading
-========================================================= */
+ */
 
 .section-heading {
     width: 100%;
@@ -98,9 +101,9 @@
 }
 
 
-/* =========================================================
+/* 
    Section Title
-========================================================= */
+ */
 
 .section-title {
     display: flex;
@@ -124,17 +127,17 @@
 }
 
 
-/* =========================================================
+/* 
    Services Grid
-========================================================= */
+ */
 
 .services-section {
-    overflow: hidden;
+    overflow: visible;
 }
 
 .services-grid-container {
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: visible;
     scrollbar-width: none;    
     -ms-overflow-style: none;
 }
@@ -145,8 +148,6 @@
 
 .services-grid {
     position: relative;
-
-    width: min-content;
     height: 200px;
     display: flex;
     gap: 0;
@@ -157,14 +158,13 @@
     flex-wrap: nowrap;
 
     overflow: visible;
-    animation: servicesDesktopScroll linear 15s infinite;
+    animation: servicesDesktopScroll alternate 15s infinite;
 
 }
 
 .services-grid-2 {
     position: relative;
     z-index: 29;
-    width: min-content;
     height: 200px;
     display: flex;
     gap: 0;
@@ -175,13 +175,107 @@
 
     overflow: visible;
     animation-delay: .4s;
-    animation: servicesDesktopScroll linear 12s infinite;
+    animation: servicesDesktopScrollReverse alternate 15s infinite;
     
 }
 
-/* =========================================================
+.services-grid,
+.services-grid-2 {
+    width: max-content;
+}
+
+.all-services-container {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 180px;
+    width: 180px;
+    align-items: center;
+    margin: 2rem auto;
+    animation: alternate infinite squareRotate 15s;
+}
+
+.all-services-container {
+    border: 1px solid transparent;
+}
+
+.all-services-container .box,
+.all-services-container,
+.all-servicess-container a, 
+.all-services-container .all-services {
+    transition: ease 2s all;
+}
+
+.all-services-container:hover {
+    background-color: var(--color-black);
+    border: 1px solid var(--color-white);
+    transition: ease 2s all;
+}
+
+.all-services-container:hover .box,
+.all-services-container:hover,
+.all-services-container:hover .all-services {
+    transform: scale(1.2) rotate(45deg);
+}
+
+@keyframes squareRotate {
+    from {
+        transform: rotate(45deg);
+    }
+    
+    to {
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes squareRotateReverse {
+    from {
+        transform: rotate(405deg);
+    }
+    
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+
+.all-services-container a {
+    z-index: 200;
+}
+
+.all-services-container .box {
+    background-color: var(--color-black);
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--color-white);
+    box-shadow: 0px 0px 25px var(--color-black);
+    transform: rotate(45deg);
+    z-index: 200;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .all-services {
+    animation: alternate infinite squareRotateReverse 15s;
+    z-index: 200;
+    font-size: 1.2rem;
+}
+
+.box .all-services h3 {
+    font-weight: 200;
+    z-index: 200;
+    transform: rotate(225deg);
+}
+
+
+/* 
    Service Card
-========================================================= */
+ */
 
 .service-card {
     position: relative;
@@ -229,9 +323,7 @@
 
 }
 
-/* =========================================================
-   Hover State
-========================================================= */
+/* Hover State */
 
 .service-card:hover {
     transform: scale(1.08);
@@ -243,10 +335,7 @@
     opacity: 90%;
 }
 
-
-/* =========================================================
-   Service Image
-========================================================= */
+/* Service Image */
 
 .service-image {
     width: 100%;
@@ -262,21 +351,17 @@
     transform: scale(1.0);
 }
 
-
-/* =========================================================
-   Service Overlay
-========================================================= */
+/* Service Overlay */
 
 .service-overlay {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
+    background: alternate-gradient(
         to top,
         rgba(0, 0, 0, 0.82),
         rgba(0, 0, 0, 0.2)
     );
-
 
     display: flex;
     flex-direction: column;
@@ -284,10 +369,7 @@
     justify-content: center;
 }
 
-
-/* =========================================================
-   Service Name
-========================================================= */
+/* Service Name */
 
 .service-name {
     font-size: 1.2rem;
@@ -296,16 +378,14 @@
     border: 1px solid transparent;
     transition: ease 0.6s all;
     font-weight: bold;
-    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
     padding: 16px;
-
-
-    /* animation: floatingText 4s ease-in-out infinite; */
 }
 
 .service-card:hover .service-name {
-    box-shadow: 0px 5px 20px black;
-    background-color: black;
+    box-shadow: 0px 5px 20px var(--color-black);
+    background-color: var(--color-black);
     transform: scale(0.9) translate(0px, -3px);
 }
 
@@ -324,9 +404,7 @@
   }
 
 
-/* =========================================================
-   Animations
-========================================================= */
+/* Animations */
 
 @keyframes floatingText {
 
@@ -361,9 +439,7 @@
 }
 
 
-/* =========================================================
-   Tablet
-========================================================= */
+/* Tablet */
 
 @media screen and (min-width: 768px) {
 
@@ -400,12 +476,19 @@
         transform: translateX(10%);
     }   
 }
+
+@keyframes servicesDesktopScrollReverse {
+    
+    0% {
+        transform: translateX(10%);
+    }
+    
+    100% {
+        transform: translateX(-30%);
+    }   
+}
         
-
-
-/* =========================================================
-   Desktop
-========================================================= */
+/* Desktop */
 
 @media screen and (min-width: 1200px) {
 
@@ -413,11 +496,11 @@
         gap: 1rem;
         margin: 0 auto;
         margin-bottom: 20px;
-        animation: servicesDesktopScroll linear 15s infinite;
+        animation: servicesDesktopScroll alternate 15s infinite;
     }
 
     .services-grid-2 {
-        animation: servicesDesktopScroll linear 15s infinite;
+        animation: servicesDesktopScrollReverse alternate 15s infinite;
 
     }
 
@@ -432,9 +515,9 @@
         flex: 0 0 auto;
         
     }
-/* =========================================================
+/* 
    Infinite Horizontal Scroll
-========================================================= */
+ */
 
 
 
