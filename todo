@@ -3,11 +3,15 @@
 [X] set icon on the tab too
 [X] Cool more review button animation and flow
 [X] adding video instead of img for home bg
-[/] tighter casa logo on both sidenav and home section
-[ ] article page
+[X] article page 
+[X] seperate all services from services, 
+[X] hair care article
+[ ] side nav update and redesign
 [ ] adding waze map button
 [ ] put real reviews
-[ ] seperate all services from services, turn services into links properly and seo friendly
+[ ] turn services into links properly and seo friendly
+--- [ ] article page update
+--- [ ] add bg for about us
 --- [ ] change articles format for better seo and questions
 --- [ ] general considration of optimization in SEO
 --- [ ] general redesign update after my life is stable

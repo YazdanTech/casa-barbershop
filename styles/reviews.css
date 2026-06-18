@@ -2,46 +2,43 @@
 
 .reviews-section {
     position: relative;
-
     padding: 6rem 1.5rem;
     overflow: hidden;
-
     background-image: url("/assets/images/11.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 }
+
 
 /* Background Overlay */
 
 .reviews-overlay {
     position: absolute;
     inset: 0;
-
     background: rgba(0, 0, 0, 0.363);
 }
+
 
 /* Content Container */
 
 .reviews-container {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 1400px;
-
     margin: 0 auto;
 }
+
 
 /* Header */
 
 .reviews-header {
     display: flex;
     justify-content: center;
-
     margin-bottom: 4rem;
 }
+
 
 /* Reviews Grid */
 
@@ -67,18 +64,14 @@
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0.527);
-    box-shadow:
-        0px 10px 20px rgba(0, 0, 0, 0.479);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.479);
     transition: ease 1s all;
-
 }
-
 
 .reviews-grid-container {
     overflow-x: scroll;
     width: 200%;
-    overflow-y:hidden;
-
+    overflow-y: hidden;
     max-height: 30rem;
     min-height: 30rem;
     display: flex;
@@ -86,71 +79,72 @@
     justify-content: center;
     align-items: center;
     scrollbar-width: none;
-    margin-left: -40px;    
+    margin-left: -40px;
     padding: 5rem 10rem;
     padding-left: 30rem;
     -ms-overflow-style: none;
 }
 
 .reviews-grid-container::-webkit-scrollbar {
-    display: none;                /* Chrome, Safari */
+    display: none;
+    /* Chrome, Safari */
 }
 
 
 /* Hover Effect */
 
 .review-card:hover {
-    transform:translateY(-10px) translateX(4px);
-    box-shadow:0px 18px 45px rgba(0, 0, 0, 0.685);
+    transform: translateY(-10px) translateX(4px);
+    box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.685);
     transition: all ease 1s;
 }
+
 
 /* Infinite Horizontal Scroll */
 
 @keyframes reviewsScroll {
-
     0% {
         transform: translateX(0%);
     }
-
     100% {
         transform: translateX(-50%);
     }
-
 }
+
 
 /* Tablet */
 
 @media screen and (min-width: 800px) {
-
     .review-card {
         width: 100px;
     }
 }
 
+
 /* Desktop */
 
 @media screen and (min-width: 1200px) {
-
     .reviews-grid {
         width: 105vw;
         padding: 2.5rem;
         margin-left: -1300px;
         animation: reviewsScroll 25s linear infinite;
     }
-
 }
 
 .reviews-container {
     overflow: visible;
 }
+
+
 /* Hover Effect */
 
 .review-card:hover {
-    transform:translateY(-10px) translateX(4px);
-    box-shadow:0px 18px 45px rgba(0, 0, 0, 0.685);
+    transform: translateY(-10px) translateX(4px);
+    box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.685);
     transition: all ease 1s;
 }
+
 
 /* Stars */
 
@@ -158,68 +152,59 @@
     margin-bottom: 1.5rem;
     text-align: center;
     color: gold;
-
     font-size: 1rem;
     letter-spacing: 0.2em;
 }
+
 
 /* Review Description */
 
 .review-description {
     color: var(--color-white);
-
-
     font-size: 0.95rem;
     line-height: 1.9;
     font-weight: 100;
-
     margin-bottom: 2rem;
 }
+
 
 /* User Name */
 
 .review-user {
     color: var(--color-white);
-
     font-size: 0.9rem;
     font-weight: 300;
-
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
+
 /* Tablet */
 
 @media screen and (min-width: 768px) {
-
     .reviews-grid {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
-
     .review-card {
         width: 45vw;
     }
-
 }
+
 
 /* Desktop */
 
 @media screen and (min-width: 1200px) {
-
     .reviews-section {
         padding: 8rem 2rem;
     }
-
     .review-card {
         width: calc(33.333% - 1rem);
         padding: 2.5rem;
     }
-
     .review-description {
         font-size: 1rem;
     }
-
 }
 
 .review-btn-container {
@@ -234,7 +219,6 @@
     background-color: black;
     color: var(--color-white);
 }
-
 
 .reviews-grid.is-switching {
     transform: translateX(-24px) rotateY(-12deg) scale(0.98);
@@ -256,43 +240,39 @@
     opacity: 1;
     transform: translateX(0) rotateY(0);
     transition: ease all 1s;
-    transition: 
-        backdrop-filter ease 1s,
-        box-shadow ease 1s,
-        opacity ease 3s,
-        filter ease 1s,
-        background-color ease 0s,
-        transform ease 3s;
+    transition: backdrop-filter ease 1s, box-shadow ease 1s, opacity ease 3s, filter ease 1s, background-color ease 0s, transform ease 3s;
     transition-delay: 0s, 0s, 0s, 0s;
     transition-property: opacity, filter, background-color, transform;
 }
 
 .review-card.entered:hover {
-    transform:translateY(-10px) translateX(4px);
-    box-shadow:0px 18px 45px rgba(0, 0, 0, 0.685);
+    transform: translateY(-10px) translateX(4px);
+    box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.685);
     transition: all ease 1s;
 }
 
-.review-card.entering p, .review-card.entering h3{
-    transition: all ease 10s; 
+.review-card.entering p,
+.review-card.entering h3 {
+    transition: all ease 10s;
     opacity: 0;
     transition-delay: 4s;
 }
 
-.review-card.entering div{
-    transition: all ease 10s; 
+.review-card.entering div {
+    transition: all ease 10s;
     transform: scale(1.4);
     color: var(--color-white);
 }
 
-.review-card.entered p, .review-card.entered h3{
-    transition: all ease 2s; 
+.review-card.entered p,
+.review-card.entered h3 {
+    transition: all ease 2s;
     opacity: 1;
     transition-delay: 1s;
 }
 
-.review-card.entered div{
-    transition: all ease 2s; 
+.review-card.entered div {
+    transition: all ease 2s;
     transform: scale(1);
     transition-delay: 1s;
     color: gold;
@@ -309,23 +289,20 @@
     background-color: black;
     transform: scale(0.9);
     transition-behavior: ease;
-    transition: 
-        opacity ease 2.5s,
-        filter ease 2.5s,
-        background-color ease 1s,
-        transform ease 5s;
+    transition: opacity ease 2.5s, filter ease 2.5s, background-color ease 1s, transform ease 5s;
     transition-delay: 1.1s, 1.1s, 0s, 0.1s;
     transition-property: opacity, filter, background-color, transform;
 }
 
-.review-card.leaving p, .review-card.leaving h3{
-    transition: all ease 1.8s; 
+.review-card.leaving p,
+.review-card.leaving h3 {
+    transition: all ease 1.8s;
     opacity: 0;
     transition-delay: 0.3s;
 }
 
-.review-card.leaving div{
-    transition: all ease 2s; 
+.review-card.leaving div {
+    transition: all ease 2s;
     transform: scale(1.3);
     color: var(--color-white);
 }

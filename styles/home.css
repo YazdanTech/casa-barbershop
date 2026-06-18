@@ -18,12 +18,9 @@
 :root {
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-overlay: rgba(0, 0, 0, 0.685);
-
+    --color-overlay: rgba(0, 0, 0, 0.411);
     --font-primary: Arial, Helvetica, sans-serif;
-
     --container-width: 1400px;
-
     --transition-default: 0.3s ease;
 }
 
@@ -84,7 +81,6 @@ b {
  */
 
 .navbar {
-
     position: fixed;
     display: flex;
     top: 0px;
@@ -92,7 +88,6 @@ b {
     left: 1rem;
     align-items: center;
     justify-content: space-between;
-
     background: transparent;
 }
 
@@ -104,7 +99,6 @@ b {
 .brand-logo {
     width: 80px;
     height: 80px;
-
     display: flex;
     border-radius: 25px;
     align-items: center;
@@ -125,41 +119,43 @@ b {
 .nav-links {
     display: none;
     list-style: none;
-    /* border-radius: 2rem; */
     height: 3.8rem;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(6px);
+    z-index: 100000;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, black, white) 1;
     padding: 0px 3rem;
+    transition: 1s all ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.678);
     gap: 2rem;
-    background: linear-gradient(to right, transparent 0%, black 25%, black 50%, black 75%, transparent 100%);
+}
+
+.nav-links:hover {
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.678);
 }
 
 .nav-links a {
     position: relative;
-
     font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
     transition: var(--transition-default);
 }
 
 .nav-links a:hover {
-    color:white;
+    color: white;
 }
 
 .nav-links a::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: -6px;
-
     width: 0%;
     height: 1px;
-
     background-color: var(--color-white);
-
     transition: var(--transition-default);
 }
 
@@ -175,7 +171,6 @@ b {
 .menu-toggle {
     width: 30px;
     height: 22px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -242,20 +237,18 @@ b {
     .mobile-video {
         display: none;
     }
-    
     .desktop-video {
         display: block;
     }
 }
-
 
 .header-logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
+
 
 /* 
    Hero Logo
@@ -288,14 +281,12 @@ b {
 
 .hero-button {
     border: 1px solid var(--color-white);
-
     padding: 0.9rem 2.2rem;
     font-weight: 400;
     margin: 2rem 0;
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-
     transition: var(--transition-default);
     backdrop-filter: blur(5px);
     animation: bookNow 2.5s alternate-reverse infinite;
@@ -306,16 +297,17 @@ b {
     color: var(--color-black);
 }
 
-    @keyframes bookNow {
-        0%{
-            box-shadow: 0px 0px 20px var(--color-black);
-            border-color: var(--color-black);
-        }
-        100%{
-            box-shadow: 0px 0px 20px var(--color-black);
-            border-color: var(--color-white);
-        }
+@keyframes bookNow {
+    0% {
+        box-shadow: 0px 0px 20px var(--color-black);
+        border-color: var(--color-black);
     }
+    100% {
+        box-shadow: 0px 0px 20px var(--color-black);
+        border-color: var(--color-white);
+    }
+}
+
 
 /* 
    Hero Divider
@@ -324,9 +316,7 @@ b {
 .hero-divider {
     width: 120px;
     height: 1px;
-
     margin: 2rem 0;
-
     background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%)
 }
 
@@ -337,11 +327,9 @@ b {
 
 .hero-description {
     max-width: 620px;
-
     font-size: 0.85rem;
     line-height: 1.9;
     letter-spacing: 0.03em;
-
     color: rgba(255, 255, 255, 0.82);
 }
 
@@ -351,33 +339,26 @@ b {
  */
 
 @media screen and (min-width: 768px) {
-
     .navbar {
         padding: 1rem;
     }
-
     .nav-links {
         display: flex;
         justify-content: center;
-        background: linear-gradient(to right, transparent 0%, black 25%, black 50%, black 75%, transparent 100%);
-
+        background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 75%, transparent 100%);
         align-items: center;
     }
-
     .hero-content h1 {
         font-size: 4.6rem;
         width: 60%;
     }
-
     .hero-description {
         font-size: 0.95rem;
     }
-
     .hero-logo {
         height: 170px;
         transform: translate(11px, -5px)
     }
-
 }
 
 
@@ -386,20 +367,14 @@ b {
  */
 
 @media screen and (min-width: 1200px) {
-
     .hero-content h1 {
         font-size: 4.8rem;
     }
-
     .hero-description {
         font-size: 1rem;
     }
-
     .hero-logo {
         height: 175px;
         transform: translate(11px, -5px)
     }
-
 }
-
-
