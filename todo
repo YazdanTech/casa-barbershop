@@ -9,7 +9,8 @@
 [X] side nav update and redesign
 [X] adding waze map button
 [X] put real reviews
-[ ] turn services into links properly and seo friendly
+[X] turn services into links properly and seo friendly
+--- [ ] Each service can be clicked to choose more detailed services
 --- [ ] article page update
 --- [ ] add bg for about us
 --- [ ] change articles format for better seo and questions
