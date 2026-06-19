@@ -21,10 +21,6 @@
 }
 
 
-/* 
-   Layout Blocks
- */
-
 .article-content .right,
 .article-content .left {
     width: 100%;
@@ -106,24 +102,6 @@
 }
 
 
-/* .article-link-1 h3 {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.377) 1%, transparent 80%);
-}
-
-.article-link-2 h3 {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.377) 1%, transparent 60%);
-}
-
-.article-link-3 h3 {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.377) 1%, transparent 40%);
-}
-
-.article-link-4 h3 {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.377) 1%, transparent 20%);
-} */
-
-
-/* Description text */
 
 .article-link .desc {
     font-size: 1.4rem;
@@ -136,10 +114,6 @@
     animation-range: entry 12% cover 38%;
 }
 
-
-/* 
-   Hover / Focus
- */
 
 .article-link h3,
 .article-link .desc,
@@ -167,10 +141,6 @@
     text-underline-offset: 0.2em;
 }
 
-
-/* 
-   Keyframes
- */
 
 @keyframes articleSlideIn {
     from {
