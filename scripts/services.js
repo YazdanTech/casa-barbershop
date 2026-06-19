@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     rows.forEach((row) => {
-        duplicateServices(row, 2); // 3 originals -> 9 total
+        duplicateServices(row, 1); // 3 originals -> 9 total
         // duplicateServices(row, 1); // 3 originals -> 6 total
     });
 });
