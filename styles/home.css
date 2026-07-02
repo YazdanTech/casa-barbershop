@@ -124,7 +124,7 @@ b {
     z-index: 100000;
     border-width: 1px;
     border-style: solid;
-    border-image: linear-gradient(to right, black, white) 1;
+    border-image: linear-gradient(to right,var(--color-black),var(--color-white)) 1;
     padding: 0px 3rem;
     transition: 1s all ease;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.678);
@@ -145,7 +145,7 @@ b {
 }
 
 .nav-links a:hover {
-    color: white;
+    color:var(--color-white);
 }
 
 .nav-links a::after {
@@ -237,6 +237,7 @@ b {
     .mobile-video {
         display: none;
     }
+
     .desktop-video {
         display: block;
     }
@@ -302,6 +303,7 @@ b {
         box-shadow: 0px 0px 20px var(--color-black);
         border-color: var(--color-black);
     }
+
     100% {
         box-shadow: 0px 0px 20px var(--color-black);
         border-color: var(--color-white);
@@ -317,7 +319,7 @@ b {
     width: 120px;
     height: 1px;
     margin: 2rem 0;
-    background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%)
+    background: linear-gradient(to right, transparent 0%,var(--color-white) 50%, transparent 100%)
 }
 
 
@@ -342,19 +344,23 @@ b {
     .navbar {
         padding: 1rem;
     }
+
     .nav-links {
         display: flex;
         justify-content: center;
         background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 75%, transparent 100%);
         align-items: center;
     }
+
     .hero-content h1 {
         font-size: 4.6rem;
         width: 60%;
     }
+
     .hero-description {
         font-size: 0.95rem;
     }
+
     .hero-logo {
         height: 170px;
         transform: translate(11px, -5px)
@@ -365,16 +371,54 @@ b {
 /* 
    Desktop
  */
-
 @media screen and (min-width: 1200px) {
+    
+    /* Forces the nav links to anchor to the dead center of the screen */
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .hero-content h1 {
         font-size: 4.8rem;
     }
+
     .hero-description {
         font-size: 1rem;
     }
+
     .hero-logo {
         height: 175px;
         transform: translate(11px, -5px)
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .desktop-top-nav-book-btn {
+        height: 3.8rem;
+        backdrop-filter: blur(6px);
+        z-index: 100000;
+        background-color: rgba(0, 0, 0, 0.952);
+        border-width: 1px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        border-style: solid;
+        border-image: linear-gradient(to right bottom ,var(--color-black),var(--color-white)) 1;
+        padding: 0rem 3rem;
+        transition: 0.5s all ease;
+        justify-content: center;
+        align-items: center;
+        display: flex;     
+        max-width: max-content;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.678);
+    }
+
+    .desktop-top-nav-book-btn:hover {
+        border-image: linear-gradient(to right bottom ,var(--color-white),var(--color-black)) 1;
+        background-color: rgba(0, 0, 0, 0.521);
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.678);
     }
 }
