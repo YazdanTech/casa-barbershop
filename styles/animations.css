@@ -33,11 +33,16 @@
 }
 
 .ltr {
-  transform: translate(-10rem);;
+  transform: translate(-10rem);
   transition: ease 1.2s;
 }
 
-.ltr.show {
+.rtl {
+  transform: translate(10rem);
+  transition: ease 1.2s;
+}
+
+.ltr.show, .rtl.show {
   transform: none;
 }
 
