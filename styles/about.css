@@ -119,7 +119,7 @@
 
 .about-map {
     width: 100%;
-    height: 200px;
+    height: auto;
     overflow: hidden;
     border: 1px solid var(--color-white);
     box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.35);
@@ -235,7 +235,7 @@
 
 @media screen and (min-width: 768px) {
     .icon {
-        width: 40px;
+        width: 30px;
         padding: 4px;
         filter: invert(100%);
     }
@@ -251,7 +251,7 @@
 
 @media screen and (min-width: 1200px) {
     .icon {
-        width: 50px;
+        width: 30px;
         padding: 4px;
         filter: invert(100%);
     }
@@ -282,10 +282,20 @@
         width: 50%;
         max-width: none;
         margin: 0;
+        /* CHANGE: Force container to fill available height and use flex layout */
+        height: auto; 
+        display: flex;
+        flex-direction: column;
     }
 
     .about-map {
-        height: 100%;
+        flex: 1; 
         min-height: 350px;
+        position: relative;
+    }
+
+    .about-map iframe {
+        height: 100%;
+        width: 100%;
     }
 }
