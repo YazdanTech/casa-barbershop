@@ -1,0 +1,278 @@
+/* Universal Reset Isolation for the Badge */
+.mstr-credit-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px auto 20px auto;
+  padding: 0;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.mstr-credit-badge a {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace, Courier, monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  background: rgba(0, 0, 0, 0.05);
+  color: white;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+}
+
+.mstr-credit-badge__separator {
+  opacity: 1;
+  color: purple;
+}
+
+/* Micro-Interaction Animation */
+.mstr-credit-badge a:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  letter-spacing: 3px !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Shapes Container & Base Styles */
+.mstr-shapes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mstr-shape {
+  opacity: 0; /* Transparent by default */
+  color: white; /* Uses currentColor for easy theme inversion */
+}
+
+/* Shape Geometry */
+.mstr-line { width: 12px; height: 1px; background: currentColor; }
+.mstr-circle { width: 12px; height: 12px; border-radius: 50%; border: 1px solid currentColor; background: transparent; }
+.mstr-diamond { width: 12px; height: 12px; transform: rotate(45deg); border: 1px solid currentColor; background: transparent; }
+.mstr-vertical-line-1 { width: 1px; height: 6px; background: currentColor; }
+.mstr-vertical-line-2 { width: 1px; height: 12px; background: currentColor; }
+.mstr-vertical-line-3 { width: 1px; height: 18px; background: currentColor; }
+
+/* more shapes */
+
+/* 1. Nested Squares */
+.mstr-nested-squares { 
+  width: 12px; 
+  height: 12px; 
+  border: 1px solid currentColor; 
+  position: relative; 
+  background: transparent; 
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+.mstr-nested-squares::before { 
+  content: ""; 
+  position: absolute; 
+  color: currentColor;
+  inset: 2px; 
+  border: 1px solid currentColor; 
+  box-sizing: border-box;
+}
+
+/* 2. Interlaced Circles */
+.mstr-interlaced-circles { 
+  width: 20px; 
+  height: 12px; 
+  position: relative; 
+  background: transparent; 
+}
+.mstr-interlaced-circles::before, 
+.mstr-interlaced-circles::after { 
+  content: ""; 
+  position: absolute; 
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%; 
+  border: 1px solid currentColor; 
+  top: 0; 
+  box-sizing: border-box; 
+}
+.mstr-interlaced-circles::before { left: 0; }
+.mstr-interlaced-circles::after { right: 0; }
+
+/* 3. Solid Triangle */
+.mstr-triangle { 
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent; 
+  border-right: 6px solid transparent; 
+  border-bottom: 11px solid currentColor; 
+  background: transparent; 
+}
+
+/* 4. Radar / Crosshair Circle */
+.mstr-crosshair { 
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%; 
+  border: 1px solid currentColor; 
+  position: relative; 
+  background: transparent; 
+  box-sizing: border-box;
+}
+.mstr-crosshair::before, 
+.mstr-crosshair::after { 
+  content: ""; 
+  position: absolute; 
+  background: currentColor; 
+  transform: translate(-50%, -50%); 
+  top: 50%; 
+  left: 50%; 
+}
+.mstr-crosshair::before { width: 14px; height: 1px; }
+.mstr-crosshair::after { width: 1px; height: 14px; }
+
+/* 5. Tech Hourglass */
+.mstr-hourglass { 
+  width: 0; 
+  height: 0; 
+  border-top: 6px solid currentColor; 
+  border-bottom: 6px solid currentColor; 
+  border-left: 6px solid transparent; 
+  border-right: 6px solid transparent; 
+  background: transparent; 
+}
+
+/* 6. Double Chevron */
+.mstr-double-chevron { 
+  width: 12px; 
+  height: 12px; 
+  position: relative; 
+  background: transparent; 
+}
+.mstr-double-chevron::before, 
+.mstr-double-chevron::after { 
+  content: ""; 
+  position: absolute; 
+  width: 8px; 
+  height: 8px; 
+  border-right: 1px solid currentColor; 
+  border-bottom: 1px solid currentColor; 
+  transform: rotate(-45deg); 
+  left: 2px; 
+  box-sizing: border-box;
+}
+.mstr-double-chevron::before { top: 0px; }
+.mstr-double-chevron::after { top: 4px; }
+
+.mstr-double-chevron-reversed { 
+  width: 12px; 
+  height: 12px; 
+  position: relative; 
+  background: transparent; 
+}
+.mstr-double-chevron-reversed::before, 
+.mstr-double-chevron-reversed::after { 
+  content: ""; 
+  position: absolute; 
+  width: 8px; 
+  height: 8px; 
+  border-left: 1px solid currentColor; 
+  border-top: 1px solid currentColor; 
+  transform: rotate(-45deg); 
+  left: 2px; 
+  box-sizing: border-box;
+}
+.mstr-double-chevron-reversed::before { top: 0px; }
+.mstr-double-chevron-reversed::after { top: 4px; }
+
+
+.mstr-shape-complex-1 {
+  width: 46px;
+  height: 16px;
+  position: relative;
+  background: 
+    /* Horizontal core line */
+    linear-gradient(currentColor, currentColor) no-repeat left center / 40px 1px,
+    /* 1st short vertical cut */
+    linear-gradient(currentColor, currentColor) no-repeat 10px center / 1px 6px,
+    /* 2nd medium vertical cut */
+    linear-gradient(currentColor, currentColor) no-repeat 20px center / 1px 11px,
+    /* 3rd long vertical cut */
+    linear-gradient(currentColor, currentColor) no-repeat 30px center / 1px 16px;
+}
+
+.mstr-shape-complex-1::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background: black; /* Matches parent background to look hollow */
+  box-sizing: border-box;
+  
+  /* Centers the circle's exact midpoint over the end of the 40px horizontal line */
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mstr-shape-complex-2 {
+  width: 46px;
+  height: 16px;
+  position: relative;
+  background: 
+    linear-gradient(currentColor, currentColor) no-repeat right center / 40px 1px,
+    linear-gradient(currentColor, currentColor) no-repeat calc(100% - 10px) center / 1px 6px,
+    linear-gradient(currentColor, currentColor) no-repeat calc(100% - 20px) center / 1px 11px,
+    linear-gradient(currentColor, currentColor) no-repeat calc(100% - 30px) center / 1px 16px;
+}
+
+.mstr-shape-complex-2::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  background: black;
+  box-sizing: border-box;
+  left: 1px; 
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mstr-shape-complex-2::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  background: black; /* Matches parent background to look hollow */
+  box-sizing: border-box;
+  
+  /* Centers the rotated square's exact midpoint over the end of the 40px line */
+  right: 1px; 
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* The Wave Animation Triggered by .is-visible */
+.mstr-credit-badge.is-visible .mstr-shape {
+  /* Infinite wave. Delay multiplied by index (--i) pushes it outward */
+  animation: energyWave 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: calc(var(--i) * 0.3s);
+}
+
+@keyframes energyWave {
+  0% { opacity: 0;}
+  40% { opacity: 1; border-color:currentColor; }
+  60% { opacity: 1;}
+  100% { opacity: 0;}
+}
