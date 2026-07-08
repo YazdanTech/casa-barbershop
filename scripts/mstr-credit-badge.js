@@ -2,11 +2,11 @@
     'use strict';
 
     var badge = document.getElementById('mstrBadge');
-    
+
     if (badge && 'IntersectionObserver' in window) {
         var badgeObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
-                if (entry.isIntersecting) { 
+                if (entry.isIntersecting) {
                     // Triggers the CSS wave animation
                     entry.target.classList.add('is-visible');
                 } else {
@@ -22,3 +22,30 @@
         badge.classList.add('is-visible');
     }
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const badgeLink = document.querySelector(".mstr-credit-badge a");
+    const overlay = document.getElementById("redirectOverlay");
+    const overlayText = document.getElementById("redirectText");
+
+    if (badgeLink && overlay && overlayText) {
+        badgeLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetUrl = badgeLink.getAttribute("href");
+
+            setTimeout(() => {
+                overlay.classList.add("is-active");
+
+                setTimeout(() => {
+                    overlayText.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.open(targetUrl, '_blank');
+                        overlay.classList.remove("is-active");
+                        overlayText.classList.remove("fade-out");
+                    }, 2000);
+                }, 1500);
+            }, 500)
+        });
+    }
+});
