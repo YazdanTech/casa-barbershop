@@ -7,18 +7,15 @@
         var badgeObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    // Triggers the CSS wave animation
                     entry.target.classList.add('is-visible');
                 } else {
-                    // Optional: remove class when out of view to restart wave upon return
                     entry.target.classList.remove('is-visible');
                 }
             });
-        }, { threshold: 0.1 }); // Triggers when 50% of the badge is visible
+        }, { threshold: 0.1 });
 
         badgeObserver.observe(badge);
     } else if (badge) {
-        // Fallback for older browsers
         badge.classList.add('is-visible');
     }
 })();
@@ -27,34 +24,57 @@ document.addEventListener("DOMContentLoaded", () => {
     const badgeLink = document.querySelector(".mstr-credit-badge a");
     const overlay = document.getElementById("redirectOverlay");
     const overlayText = document.getElementById("redirectText");
+    const btnVisit = document.getElementById("mstrBtnVisit");
+    const btnBack = document.getElementById("mstrBtnBack");
 
     if (badgeLink && overlay && overlayText) {
+        const targetUrl = badgeLink.getAttribute("href");
+        
+        // Accurate detection for mobile user-agents
+        const isMobile = /Mobi|Android|iPhone|iPad|Macintosh/i.test(navigator.userAgent) && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
         badgeLink.addEventListener("click", (e) => {
             e.preventDefault();
-            const targetUrl = badgeLink.getAttribute("href");
 
-            // 1. Open a blank tab instantly while the browser trusts the physical tap
-            const newTab = window.open('about:blank', '_blank');
-
-            // 2. Run your timed overlay sequence
-            setTimeout(() => {
-                overlay.classList.add("is-active");
-
+            if (!isMobile) {
+                // DESKTOP FLOW: Auto-cinematic redirection sequence
                 setTimeout(() => {
-                    overlayText.classList.add("fade-out");
+                    overlay.classList.add("is-active");
 
                     setTimeout(() => {
-                        // 3. Inject your portfolio URL into the already open tab
-                        if (newTab) {
-                            newTab.location.href = targetUrl;
-                        }
-                        
-                        // Reset original page state
-                        overlay.classList.remove("is-active");
-                        overlayText.classList.remove("fade-out");
-                    }, 2000);
-                }, 1500);
-            }, 500);
+                        overlayText.classList.add("fade-out");
+
+                        setTimeout(() => {
+                            window.open(targetUrl, '_blank');
+                            overlay.classList.remove("is-active");
+                            overlayText.classList.remove("fade-out");
+                        }, 2000);
+                    }, 1500);
+                }, 500);
+            } else {
+                // MOBILE FLOW: Halt automated routing, serve explicit interaction elements
+                setTimeout(() => {
+                    overlay.classList.add("is-active");
+
+                    setTimeout(() => {
+                        overlay.classList.add("show-buttons");
+                    }, 1000);
+                }, 500);
+            }
         });
+
+        // Interactive handling for manual mobile choice execution
+        if (btnVisit) {
+            btnVisit.addEventListener("click", () => {
+                window.open(targetUrl, '_blank');
+                overlay.classList.remove("is-active", "show-buttons");
+            });
+        }
+
+        if (btnBack) {
+            btnBack.addEventListener("click", () => {
+                overlay.classList.remove("is-active", "show-buttons");
+            });
+        }
     }
 });
