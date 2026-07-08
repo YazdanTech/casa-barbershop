@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     setTimeout(() => {
                         overlay.classList.add("show-buttons");
-                    }, 1000);
+                    }, 0);
                 }, 500);
             }
         });
