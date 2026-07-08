@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const targetUrl = badgeLink.getAttribute("href");
 
+            // 1. Open a blank tab instantly while the browser trusts the physical tap
+            const newTab = window.open('about:blank', '_blank');
+
+            // 2. Run your timed overlay sequence
             setTimeout(() => {
                 overlay.classList.add("is-active");
 
@@ -40,12 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     overlayText.classList.add("fade-out");
 
                     setTimeout(() => {
-                        window.open(targetUrl, '_blank');
+                        // 3. Inject your portfolio URL into the already open tab
+                        if (newTab) {
+                            newTab.location.href = targetUrl;
+                        }
+                        
+                        // Reset original page state
                         overlay.classList.remove("is-active");
                         overlayText.classList.remove("fade-out");
                     }, 2000);
                 }, 1500);
-            }, 500)
+            }, 500);
         });
     }
 });
