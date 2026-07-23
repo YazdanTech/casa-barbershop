@@ -103,7 +103,6 @@
     font-size: 0.95rem;
     line-height: 1.8;
     font-style: normal;
-    text-decoration: none;
     margin: 0;
 }
 
@@ -301,5 +300,5 @@
 }
 
 .underline {
-    text-decoration: 1px solid var(--color-white);
+    text-decoration: 1px underline var(--color-white);
 }
