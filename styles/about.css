@@ -299,3 +299,7 @@
         width: 100%;
     }
 }
+
+.underline {
+    text-decoration: 1px solid var(--color-white);
+}
