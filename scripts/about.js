@@ -5,27 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("parkingVideo");
     let playTimeout;
 
+    const videoSrc = "https://www.youtube.com/embed/Tn0oJpN8Gpw";
+
     if (openBtn && modal && video && closeBtn) {
         openBtn.addEventListener("click", () => {
             modal.classList.add("active");
             playTimeout = setTimeout(() => {
-                video.play();
+                video.src = videoSrc + "?autoplay=1";
             }, 1000);
         });
 
         closeBtn.addEventListener("click", () => {
             clearTimeout(playTimeout);
             modal.classList.remove("active");
-            video.pause();
-            video.currentTime = 0;
+            video.src = ""; // stops playback
         });
 
         modal.addEventListener("click", (e) => {
             if (e.target === modal) {
                 clearTimeout(playTimeout);
                 modal.classList.remove("active");
-                video.pause();
-                video.currentTime = 0;
+                video.src = ""; // stops playback
             }
         });
     }

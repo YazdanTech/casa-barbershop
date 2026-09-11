@@ -1,8 +1,8 @@
 .about-section {
     position: relative;
-    padding: 6rem .1rem;
     background-image: url("/assets/images/6.avif");
     background-size: cover;
+    padding: 10rem;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -21,9 +21,9 @@
     z-index: 2;
     width: 100%;
     max-width: 1400px;
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(5px);
     padding: 1rem;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.295);
     border: 1px solid var(--color-black);
     flex-direction: column;
     display: flex;
@@ -261,8 +261,7 @@
         border: 1px solid var(--color-white);
         margin: 10rem auto;
         box-shadow: 0px 0px 60px rgba(156, 156, 156, 0.575);
-        padding: 4rem 2rem;
-        padding-top: 1rem;
+        padding: 0;
     }
 
     .about-content {
